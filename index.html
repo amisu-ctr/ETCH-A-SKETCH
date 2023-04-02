@@ -14,12 +14,13 @@
         <h6>Select the size</h6>
         <button id="popup" class="btn btn-danger">Select</button>
     </div>
+    <p id="draw"></p>
     <div class="board"></div>
     <p class="message"></p>
     <div class="footer">
         <button onclick="setColor('black')" class="btn btn-dark">Black</button>
-        <button onclick="setColor(random)" class="btn btn-warning">Random</button>
-        <button class="btn btn-primary">Reset</button>
+        <button onclick="setColor('random')" class="btn btn-warning">Random</button>
+        <button onclick="resetBoard()" class="btn btn-primary">Reset</button>
     </div>
 
     <script src="main.js"></script>
