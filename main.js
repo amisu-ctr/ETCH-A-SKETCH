@@ -1,6 +1,11 @@
+let color = 'black'
+
 document.addEventListener("DOMContentLoaded", function() {
-    createBoard(32)
     let selectBtn = document.querySelector("#popup")
+    selectBtn.addEventListener('click' ,function() {
+        let size = getSize();
+        createBoard(size)
+    })
     console.log('come')
 })
 
@@ -15,9 +20,10 @@ function createBoard(size) {
     //
     for(let i = 0; i < numDivs; i++) {
         let div = document.createElement("div"); //create div element
-        div.style.backgroundColor = "yellow"  // background color of element created
+        div.addEventListener(('mouseover', () => {
+            div.style.backgroundColor = "yellow" 
+        })) // background color of element created
         board.insertAdjacentElement("beforeend", div) // insert created element on our board
-
     }
 }
 
@@ -30,7 +36,10 @@ function getSize() {
         message.innerHTML = 'Enter a number greater than 0'
     } else {
         message.innerHTML = 'Now you play'
+        return input // returned input here not outside the if statement so that when
+        // the condition is false this function doesnt return a size
     }
 }
+
 
 
