@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     createBoard(32)
-    getSize()
+    let selectBtn = document.querySelector("#popup")
     console.log('come')
 })
 
@@ -23,6 +23,14 @@ function createBoard(size) {
 
 function getSize() {
     let input = prompt("What will be the size of the boardd")
+    let message = document.querySelector(".message")
+    if(input === '') {
+        message.innerHTML = 'Please enter a number'
+    } else if(input < 1) {
+        message.innerHTML = 'Enter a number greater than 0'
+    } else {
+        message.innerHTML = 'Now you play'
+    }
 }
 
 
